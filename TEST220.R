@@ -1,6 +1,6 @@
 
 #--------- Read from CSV File (Remember reverse slashes) -----------
-LoggerResults = read.csv("C:/Data Repositry/Elspec/TestResults/TEST134/PQSExport_20150213_123852_Ne02b_Wave.csv", header=T)
+LoggerResults = read.csv("C:/Data Repositry/Elspec/TestResults/TEST220/PQSExport_20150218_115535_Ne02b_Wave.csv", header=T)
 
 LoggerResults$TIMESTAMP <- dmy_hm(LoggerResults$X.DATEANDTIME) + as.numeric(LoggerResults$X.SECONDS.)
 
@@ -27,4 +27,4 @@ plot(FilteredResults$TIMESTAMP,FilteredResults$X.WAVEFORMI3.)
 #---------- Mark window length as a test and write back to new csv file ----
 LoggerResults$Testing <- ifelse(LoggerResults$TIMESTAMP >= StartTime, ifelse(LoggerResults$TIMESTAMP <= EndTime, 1,0),0)
 
-write.csv(LoggerResults, file= "C:/Data Repositry/Elspec/TestResults/Test134Results.csv")
+write.csv(LoggerResults, file= "C:/Data Repositry/Elspec/TestResults/Test220Results.csv")
